@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML TO PDF</title>
+  <script src="jquery.orgchart.js"></script>
+	<script src="js/jquery.min.js"></script>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="jquery.orgchart.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  
+  
+</head>
+<body>
+    
+    <div class="nav">
+        <div class="logo">
+           <a href="index.html"> <img src="./assets/img/logo arp 1.png" alt="">  </a>
+       </div>
+    </div>
+    <div class="pag12">
+        <h2>4. Gabinete de Crise</h3>
+        <h4>4.1 Estrutura do Gabinete</h4>
+    </div>
+
+              <div id="orgChartContainer">
+            <div id="orgChart"></div>
+          </div>
+
+          <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+          <script type="text/javascript" src="jquery.orgchart.js"></script>
+          <script type="text/javascript">
+          var testData = [
+              {id: 1, name: 'Empresa', parent: 0},
+              {id: 2, name: 'Editável', parent: 1},
+              {id: 3, name: 'Editável', parent: 1},
+              {id: 4, name: 'Editável', parent: 1},
+              {id: 6, name: 'Editável', parent: 1},
+              {id: 7, name: 'Editável', parent: 1},
+              {id: 8, name: 'Editável', parent: 1},
+              {id: 5, name: 'Editável', parent: 3},
+              
+          ];
+          $(function(){
+              org_chart = $('#orgChart').orgChart({
+                  data: testData,
+                  showControls: true,
+                  allowEdit: true,
+                  onAddNode: function(node){ 
+                      log('Created new node on node '+node.data.id);
+                      org_chart.newNode(node.data.id); 
+                  },
+                  onDeleteNode: function(node){
+                      log('Deleted node '+node.data.id);
+                      org_chart.deleteNode(node.data.id); 
+                  },
+                  onClickNode: function(node){
+                      log('Clicked node '+node.data.id);
+                  }
+
+              });
+          });
+
+          // just for example purpose
+          function log(text){
+              $('#consoleOutput').append('<p>'+text+'</p>')
+          }
+          </script><script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>       
+
+<a href="pag7.html">
+    <img class="seta" src="./assets/img/seta-direita 1.png" alt="Seta">
+</a>
+
+<a href="pag5.html">
+    <img class="seta2" src="./assets/img/seta-direita 2.png" alt="seta">
+
+</a>
+
+
+
+</body>
+</html>
